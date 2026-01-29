@@ -40,18 +40,24 @@ body {
 }
 
 .hex-icon:hover {
-    animation: elastic-spin 1s infinite ease;
+    animation: elastic-spin 2s ease;
+    box-shadow: 0 0 10px #40ff40, 0 0 20px rgba(64, 255, 64, 0.5);
+
 
 
 }
 
 @keyframes elastic-spin {
-    from {
+    0% {
         transform: rotate(0deg);
     }
 
-    to {
+    50% {
         transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
     }
 }
 
@@ -66,6 +72,7 @@ body {
 .header-right {
     position: absolute;
     right: 1rem;
+
 }
 
 .status-indicator {
@@ -78,6 +85,11 @@ body {
     align-items: center;
     gap: 8px;
     background: rgba(64, 255, 64, 0.05);
+}
+
+.status-indicator:hover {
+    box-shadow: 0 0 10px #40ff40, 0 0 20px rgba(64, 255, 64, 0.5);
+
 }
 
 .pulse-dot {
@@ -337,10 +349,12 @@ body {
     border-radius: 2px;
     flex: 1;
 }
+
 .pct {
     color: #8b92a0;
     min-width: 35px;
 }
+
 @keyframes rotate {
     from {
         transform: rotate(0deg);
@@ -415,10 +429,44 @@ body {
     padding-bottom: 5px;
     border-bottom: 3px solid transparent;
     transition: all 0.3s;
+
 }
+
+.main {
+    color: #40ff40;
+    border-bottom: 2px solid #40ff40;
+
+}
+
+.main:hover {
+    animation: bounce2 2s ease;
+}
+
+
+
 
 .nav-item:hover {
     color: #40ff40;
+    animation: bounce2 2s ease;
+}
+
+@keyframes bounce2 {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
 }
 
 .nav-item:active {
@@ -500,31 +548,39 @@ body {
 
 
 @media (max-width: 768px) {
-    .hero-section { 
-        flex-direction: column; 
-        gap: 2rem; 
+    .hero-section {
+        flex-direction: column;
+        gap: 2rem;
         padding: 2rem 1.5rem;
     }
-    
-    .mission-grid { 
-        grid-template-columns: 1fr; 
+
+    .mission-grid {
+        grid-template-columns: 1fr;
         padding: 1.5rem;
     }
-    
+
     .action-bar {
         flex-direction: column;
         padding: 1.5rem;
     }
-    
-    .logo { font-size: 2rem; }
-    .stat-num { font-size: 3.5rem; }
-    .mission-title { font-size: 1.1rem; }
-    
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    .stat-num {
+        font-size: 3.5rem;
+    }
+
+    .mission-title {
+        font-size: 1.1rem;
+    }
+
     .radar-circle {
         width: 280px;
         height: 280px;
     }
-    
+
     .main-header {
         flex-direction: column;
         gap: 1rem;
@@ -534,7 +590,7 @@ body {
     .bottom-nav {
         padding: 15px 1rem;
     }
-    
+
     .nav-item span {
         font-size: 0.8rem;
     }
